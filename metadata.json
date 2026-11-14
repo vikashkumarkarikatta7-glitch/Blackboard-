@@ -1,0 +1,6 @@
+{
+  "name": "Smart Digital Blackboard",
+  "description": "Offline-first 9:16 portrait digital blackboard for mathematics teaching, smooth stylus and finger writing, PDF and photo annotation, and multi-page board export.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0B0E11">
+
+    <!-- Compact Top Bar (48dp) above writing canvas -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="#14191F"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btnPages"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:text="Page 1/1"
+            android:textColor="#E2E8F0"
+            android:textSize="12sp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/btnUndo"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Undo"
+            android:src="@android:drawable/ic_menu_revert"
+            app:tint="#E2E8F0" />
+
+        <ImageButton
+            android:id="@+id/btnRedo"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Redo"
+            android:src="@android:drawable/ic_menu_rotate"
+            app:tint="#E2E8F0" />
+
+        <Button
+            android:id="@+id/btnZoomReset"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:text="100%"
+            android:textColor="#38BDF8"
+            android:textSize="12sp" />
+
+        <ImageButton
+            android:id="@+id/btnExport"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Export or Share"
+            android:src="@android:drawable/ic_menu_share"
+            app:tint="#38BDF8" />
+    </LinearLayout>
+
+    <!-- Full-screen 9:16 Portrait Blackboard Canvas -->
+    <com.smartblackboard.app.BlackboardCanvasView
+        android:id="@+id/blackboardCanvas"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomToolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topBar" />
+
+    <!-- Bottom Touch-Friendly Floating Dock (never covers writing area) -->
+    <HorizontalScrollView
+        android:id="@+id/bottomToolbar"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:background="#14191F"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="8dp">
+
+            <Button
+                android:id="@+id/btnToolSelect"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="wrap_content"
+                android:layout_height="46dp"
+                android:layout_marginEnd="4dp"
+                android:text="Select"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btnToolAreaSelect"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="wrap_content"
+                android:layout_height="46dp"
+                android:layout_marginEnd="4dp"
+                android:text="Area"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btnToolPen"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="wrap_content"
+                android:layout_height="46dp"
+                android:layout_marginEnd="4dp"
+                android:text="Pen"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btnToolPencil"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="wrap_content"
+                android:layout_height="46dp"
+                android:layout_marginEnd="4dp"
+                android:text="Pencil"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btnToolHighlighter"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="wrap_content"
+                android:layout_height="46dp"
+                android:layout_marginEnd="4dp"
+                android:text="Marker"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btnToolText"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="wrap_content"
+                android:layout_height="46dp"
+                android:layout_marginEnd="4dp"
+                android:text="Text"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btnToolLaser"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="wrap_content"
+                android:layout_height="46dp"
+                android:layout_marginEnd="4dp"
+                android:text="Laser"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btnToolEraser"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="wrap_content"
+                android:layout_height="46dp"
+                android:layout_marginEnd="4dp"
+                android:text="Eraser"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btnShapes"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="wrap_content"
+                android:layout_height="46dp"
+                android:layout_marginEnd="4dp"
+                android:text="Shapes"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btnColors"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="wrap_content"
+                android:layout_height="46dp"
+                android:layout_marginEnd="4dp"
+                android:text="Color &amp; Size"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btnMath"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="wrap_content"
+                android:layout_height="46dp"
+                android:layout_marginEnd="4dp"
+                android:text="Math"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btnMedia"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="wrap_content"
+                android:layout_height="46dp"
+                android:layout_marginEnd="4dp"
+                android:text="Photo/PDF"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btnBgPaper"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="wrap_content"
+                android:layout_height="46dp"
+                android:layout_marginEnd="4dp"
+                android:text="Board BG"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btnClear"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="46dp"
+                android:text="Clear"
+                android:textColor="#F87171"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

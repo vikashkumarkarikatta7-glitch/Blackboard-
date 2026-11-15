@@ -1,10 +1,17 @@
 import JSZip from 'jszip';
 
-const androidFiles = import.meta.glob('/android-studio-project/**/*', {
-  query: '?raw',
-  import: 'default',
-  eager: true,
-}) as Record<string, string>;
+const androidFiles = {
+  ...(import.meta.glob('/android-studio-project/**/*', {
+    query: '?raw',
+    import: 'default',
+    eager: true,
+  }) as Record<string, string>),
+  ...(import.meta.glob('/android-studio-project/.github/**/*', {
+    query: '?raw',
+    import: 'default',
+    eager: true,
+  }) as Record<string, string>),
+};
 
 export async function downloadAndroidStudioSourceZip(): Promise<void> {
   const zip = new JSZip();
